@@ -4,7 +4,7 @@ const ChatPage = () => {
   return (
     <ChatEngine
       height="100vh"
-      projectID={process.env.PROJECT_ID}
+      projectID="2bae04c8-def6-4742-a71f-1242c1f42eaa"
       userName={localStorage.getItem("username")}
       userSecret={localStorage.getItem("password")}
     />

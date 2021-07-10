@@ -10,7 +10,7 @@ const LoginPage = () => {
     e.preventDefault();
 
     const authObject = {
-      "Project-ID": process.env.PROJECT_ID,
+      "Project-ID": "2bae04c8-def6-4742-a71f-1242c1f42eaa",
       "User-Name": username,
       "User-Secret": password,
     };
