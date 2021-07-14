@@ -1,13 +1,16 @@
 import "./App.css";
-import ChatPage from "./Pages/ChatPage";
-import LoginPage from "./Pages/LoginPage";
+import { BrowserRouter as Router } from "react-router-dom";
+import { AuthProvider } from "./Contexts/AuthContext";
+import Routes from "./Routes/Routes";
 
 function App() {
-  if (!localStorage.getItem("username")) {
-    return <LoginPage />;
-  }
-
-  return <ChatPage />;
+  return (
+    <AuthProvider>
+      <Router>
+        <Routes />
+      </Router>
+    </AuthProvider>
+  );
 }
 
 export default App;
