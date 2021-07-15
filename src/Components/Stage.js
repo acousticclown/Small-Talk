@@ -11,9 +11,17 @@ const Stage = ({ name, imageURL, id, setID, createdBy, history }) => {
       <div>
         <img src={imageURL} />
       </div>
-      <div>
+      <div
+        style={{
+          height: "4rem",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
         <h4>{name}</h4>
-        {/* <h6>Admin - {createdBy}</h6> */}
+        <h6>Created By - {createdBy}</h6>
       </div>
       <div>
         <EnterChatButton

@@ -38,26 +38,34 @@ export const StageContainer = styled.div`
 
 export const NewStageContainer = styled.div`
   padding: 3rem;
-  min-height: 60vh;
-  min-width: 40vw;
-  background-color: #007460;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const NewStageBox = styled.div`
+  padding: 1rem 0;
+  height: 60vh;
+  width: 25rem;
+  background-color: #0a0188;
   color: #fff;
-  position: absolute;
-  top: 20%;
-  left: 30%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  border: 5px solid #0e015a;
+  box-shadow: 0 0 0 5px hsl(0, 0%, 80%), 0 0 0 10px hsl(0, 0%, 90%);
 `;
 
 export const ChatContainer = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #2f4f4f;
-  min-height: 100vh;
+  min-height: 90vh;
   align-items: center;
   padding: 1.5rem 3rem;
+  padding-bottom: 10rem;
 
   h1 {
     color: #fff;

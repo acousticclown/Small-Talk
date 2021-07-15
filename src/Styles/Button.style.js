@@ -1,5 +1,18 @@
 import styled from "styled-components";
 
+export const MaterialButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #203685;
+  width: 100%;
+  height: 3rem;
+  cursor: pointer;
+  border: 3px solid #fff;
+  margin-top: auto;
+  margin-bottom: -1rem;
+`;
+
 export const EnterChatButton = styled.div`
   display: flex;
   justify-content: center;

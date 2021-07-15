@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
 import { db } from "../Configs/Firebase";
-import { NewStageContainer } from "../Styles/Container.style";
+import { NewStageBox, NewStageContainer } from "../Styles/Container.style";
 import { AuthContext } from "../Contexts/AuthContext";
+import { MaterialButton } from "../Styles/Button.style";
+import { AvatarBox, NameBox } from "../Styles/Box.style";
 
 const AddStage = ({ history }) => {
   const [name, setName] = useState("");
@@ -15,6 +17,10 @@ const AddStage = ({ history }) => {
   };
 
   const handleOnSubmit = () => {
+    if (!name) {
+      alert("Name can't be empty");
+      return;
+    }
     collectionRef.add({
       name: name,
       imageURL: "https://picsum.photos/100",
@@ -26,16 +32,19 @@ const AddStage = ({ history }) => {
 
   return (
     <NewStageContainer>
-      <h2>New Stage</h2>
-      <div>
-        <h3>Name</h3>
-        <input onChange={handleOnChange} type="text" />
-      </div>
-      <div>
-        <h3>Image</h3>
-        <input type="file" />
-      </div>
-      <button onClick={handleOnSubmit}>Create</button>
+      <NewStageBox>
+        <h2>Create New Stage</h2>
+        <NameBox>
+          <h3>Name</h3>
+          <input onChange={handleOnChange} type="text" />
+        </NameBox>
+        <AvatarBox>
+          <h3>Avatar</h3>
+          <input type="file" className="file" />
+          <label for="file">Select file</label>
+        </AvatarBox>
+        <MaterialButton onClick={handleOnSubmit}>Create</MaterialButton>
+      </NewStageBox>
     </NewStageContainer>
   );
 };
